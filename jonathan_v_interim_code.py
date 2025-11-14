@@ -1,6 +1,20 @@
 def calculate_rent(property_data, owner_data):
     """
     Calculates the rent a player must pay when landing on a property.
+    
+     The rent is based on:
+      - the property's base rent
+      - whether the owner has the full set (which doubles rent)
+      - the number of upgrades on the property (each adds +50%)
+
+    Parameters:
+        property_data (dict): Contains property info such as:
+            "base_rent" (int), "group" (str), and "upgrades" (int).
+        owner_data (dict): Contains ownership info such as:
+            "owned_groups" (dict) and "group_sizes" (dict).
+
+    Returns:
+        int: The final calculated rent amount.
     """
 
     rent = property_data["base_rent"]
